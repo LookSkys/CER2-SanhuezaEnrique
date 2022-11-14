@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href={% static 'core/css/bootstrap.css' %}>
+    <link rel="stylesheet" href={% static 'core/css/estilos.css' %}>
+</head>
+
+<body>
+    <!--::::Encabezado-->
+    <header id="encabezado">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0a141d;">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Residencial Villa Verde</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="btn btn-dark" href="/admin" role="button">Iniciar Sesion</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--::::Contenido-->
+    <div class="container" id="contenido">
+        {% block content %}{% endblock content %}
+    </div>
+
+    <!--::::Pie de Pagina::::::-->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src={% static 'core/img/logo.png' %} alt="Logo">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2021 <b>Residencias</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+<script href = {% static 'core/js/bootstrap.js' %}></script>
+</body>
+
+</html>
